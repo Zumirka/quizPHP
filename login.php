@@ -7,7 +7,7 @@ $result = mysqli_query( $conn,$mysql_qry);
 if(mysqli_num_rows($result) > 0)
 {
 	$row=mysql_fetch_assoc($result);
-	$name=$row["Login"];
+	$name=$row["login"];
 	echo " \n Loading succes! Welcome ".$name ;
 }
 else 
