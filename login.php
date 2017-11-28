@@ -6,9 +6,9 @@ $mysql_qry = "select * from users where Login like '$user_name' and Password lik
 $result = mysqli_query( $conn,$mysql_qry); 
 if(mysqli_num_rows($result) > 0)
 {
-	$row=mysql_fetch_assoc($result);
-	$name=$row["login"];
-	echo " \n Loading succes! Welcome ".$name ;
+	//$row=mysql_fetch_assoc($result);
+	//$name=$row["login"];
+	echo " \n Loading succes! Welcome ";//.$name ;
 }
 else 
 {
