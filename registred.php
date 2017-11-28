@@ -6,10 +6,12 @@ $mysql_qry = "insert into users (Login, Password) values ('$user_name','$user_pa
 if($conn->query($mysql_qry) === TRUE)
 {
 	echo  "Insert Successful " ;
+	
 }
 else 
 {
 	echo  "Error: ".$mysql_qury . "<br>".$conn->error; 
 }
+echo mysql_qry;
 $conn->close();
 ?>
