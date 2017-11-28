@@ -12,6 +12,6 @@ else
 {
 	echo  "Error: ".$mysql_qury . "<br>".$conn->error; 
 }
-echo mysql_qry;
+echo $mysql_qry;
 $conn->close();
 ?>
