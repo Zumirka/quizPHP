@@ -1,6 +1,7 @@
 <?php
 require "conn.php";
 $mysql_qry="select Name from category;";
+$conn->set_charset("utf8");
 $result=$conn->query($mysql_qry);
 if($result)
 {
@@ -8,7 +9,7 @@ if($result)
 	{
 		$flaga[]=$row;
 	}
-	print(safe_json_encode($flaga));
+	print(json_encode($flaga));
 	echo json_last_error();
 }
 $conn->close();
