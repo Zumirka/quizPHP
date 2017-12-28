@@ -1,7 +1,6 @@
 <?php
 require "conn.php";
 $id = $_POST["id"];
-else $id=21;
 $diff = $_POST["diff"];
 $mysql_qry = "SELECT q.Difficult,q.Content as Question,a.Content as Answer,a.IsTrue FROM (question q inner join answers a on a.QuestionId=q.Id) INNER JOIN(  
 SELECT q.Id FROM question q where q.CategoryId='$id' and q.Difficult='$diff' order by rand() limit 5) as q2 ON q2.Id=q.Id;"; 
