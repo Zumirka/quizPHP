@@ -9,6 +9,7 @@ if($result)
 		$flaga[]=$row;
 	}
 	print(json_encode($flaga));
+	echo json_encode($flaga);
 	error_log(json_last_error());
 }
 $conn->close();
