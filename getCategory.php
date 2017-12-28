@@ -8,8 +8,7 @@ if($result)
 	{
 		$flaga[]=$row;
 	}
-	 $clean = utf8ize($flaga); 
-	print (safe_json_encode($clean));
+	print(safe_json_encode($flaga));
 	echo json_last_error();
 }
 $conn->close();
