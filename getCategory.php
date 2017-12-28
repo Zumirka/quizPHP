@@ -1,7 +1,7 @@
 <?php
 require "conn.php";
 $mysql_qry="select Name from category;";
-$conn->set_charset("utf8");
+
 $result=$conn->query($mysql_qry);
 if($result)
 {
