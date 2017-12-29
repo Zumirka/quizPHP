@@ -10,7 +10,7 @@ if($conn->query($mysql_qry) === TRUE)
 }
 else 
 {
-	echo  "Błąd. Taki użytkownik już istnieje. \n Wpisz inny login"; 
+	echo  "Błąd. Wpisz inny login lub hasło."; 
 }
 $conn->close();
 ?>
