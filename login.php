@@ -1,17 +1,19 @@
 <?php
 require "conn.php";
-$user_name = $_POST[admin];
-$user_pass = $_POST[admin];
+$user_name = $_POST["login"];
+$user_pass = $_POST["password"];
 $mysql_qry = "select * from user where Name like '$user_name' and Password like '$user_pass';"; 
 $result = mysqli_query( $conn,$mysql_qry); 
-if($result)
+if(mysqli_num_rows($result) >= 1)
 {
-	while($row=mysqli_fetch_array($result))
-	{
-		$flaga[]=$row;
-	}
+	$row=mysqli_fetch_assoc($result);
+	$name=$row["Name"];
 	print(json_encode($flaga));
-	echo json_last_error();
+	print(json_encode($name));
+	echo " \n Logowanie powiodło się. Witaj ".$name ;
 }
-$conn->close();
+else 
+{
+	echo " \n Logowanie nie powiodło się.";
+}
 ?>
