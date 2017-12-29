@@ -1,6 +1,6 @@
 <?php
 require "conn.php";
-$mysql_qry="select Id from category;";
+$mysql_qry="select Id,Name from category;";
 
 $result=$conn->query($mysql_qry);
 if($result)
