@@ -1,7 +1,7 @@
 <?php
 require "conn.php";
-$user_name = $_POST[q];
-$user_pass = $_POST[q];
+$user_name = $_POST['q'];
+$user_pass = $_POST['q'];
 $mysql_qry = "select * from user where Name like '$user_name' and Password like '$user_pass';"; 
 $result = mysqli_query( $conn,$mysql_qry); 
 if(mysqli_num_rows($result) > 0)
