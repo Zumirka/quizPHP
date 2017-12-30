@@ -8,10 +8,10 @@ if(mysqli_num_rows($result) > 0)
 {
 	$row=mysqli_fetch_assoc($result);
 	$name=$row["Name"];
-	echo " \n Logowanie powiodło się. Witaj ".$name ;
+	echo "1";
 }
 else 
 {
-	echo " \n Logowanie nie powiodło się.";
+	echo "0";
 }
 ?>
