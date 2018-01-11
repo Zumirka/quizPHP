@@ -8,6 +8,17 @@ $sqlQuery="INSERT INTO question(CategoryId,Content,Difficult)
     $id = mysql_insert_id();
 
 $sqlQuery = "INSERT INTO answears(QuestionId,Content,IsTrue) VALUES (' $id ','test2',1)";
-$result=mysql_query($sqlQuery);
+$result=$conn->query($sqlQuery);
+
+if($result)
+{
+	while($row=mysqli_fetch_array($result))
+	{
+		$flaga[]=$row;
+	}
+	print(json_encode($flaga));
+	echo json_encode($flaga);
+	
+}
 $conn->close();
 ?>
