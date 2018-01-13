@@ -51,8 +51,5 @@ if(isset($_POST['id_kat']))
 	$result = mysqli_query( $conn,$mysql_qry);
 	$mysql_qry = "insert into answears values('','$id_quest','$odp3','$popr3')";
 	$result = mysqli_query( $conn,$mysql_qry);
-	
-
-	
 $conn->close();
 ?>
