@@ -18,13 +18,6 @@ $mysql_qry = "insert into answears (QuestionId,Content,IsTrue) values('$id_quest
 	$result = mysqli_query( $conn,$mysql_qry);
 $mysql_qry = "insert into answears (QuestionId,Content,IsTrue) values('$id_quest','$answ3',0)";
 	$result = mysqli_query( $conn,$mysql_qry);
-	if($conn->query($mysql_qry) === TRUE)
-	{
-		echo "Dodano pytanie";
-	}
-	else
-	{
-		echo " nie dodano";
-	}
+	
 $conn->close();
 ?>
