@@ -6,8 +6,9 @@ $diff =  $_POST["Difficulty"];
 $time = $_POST["Time"];
 $points =  $_POST["Points"];
 	
-$mysql_qry = "insert into statistic (UserId,CategoryId,Difficulty,Time,Points,Date) values ('$id_user','$id_cat','$diff','$time','$points',getdate())";
+$mysql_qry = "insert into statistic (UserId,CategoryId,Difficulty,Time,Points,Date) values ('$id_user','$id_cat','$diff','$time','$points',now())";
 	$result = mysqli_query( $conn,$mysql_qry);
+	
 
 $conn->close();
 ?>
