@@ -5,6 +5,6 @@ $mysql_username = $url["user"];
 $mysql_password = $url["pass"];
 $server_name = $url["host"];
 $conn = mysqli_connect($server_name, $mysql_username, $mysql_password, $dba_name); 
-$conn->time_zone='Europe/Warsaw';
+$conn->time_zone='+01:00';
 $conn->set_charset("utf8");
 ?>
