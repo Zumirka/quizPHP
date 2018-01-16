@@ -1,8 +1,8 @@
 <?php
 require "conn.php";
 $user=$_POST["UserName"];
-$time1=$POST["time1"];
-$time2=$POST["time2"];
+$time1=$_POST["time1"];
+$time2=$_POST["time2"];
 $mysql_qry = "select Id from user where Name='$user'";
 $result=$conn->query($mysql_qry);
 $row = mysqli_fetch_assoc($result);
