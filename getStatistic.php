@@ -7,7 +7,7 @@ $mysql_qry = "select Id from user where Name='$user'";
 $result=$conn->query($mysql_qry);
 $row = mysqli_fetch_assoc($result);
 $user_id=$row["Id"];
-$mysql_qry="select* from statistic where UserId='$user_id';";
+$mysql_qry="selectc.Name as CategoryName, s.Difficulty, s.Time,s.Points,s.Date from statistic s inner join categories c on s.CategoryId=c.Id where UserId='$user_id' and DATE(s.Date) BETWEEN '$time1' AND '$time2';";
 $result=$conn->query($mysql_qry);
 if($result)
 {
