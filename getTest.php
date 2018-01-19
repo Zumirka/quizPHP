@@ -4,7 +4,8 @@ $id = $_POST["id"];
 $diff = $_POST["diff"];
 
 $mysql_qry="SELECT count(*)  FROM question q where q.CategoryId='$id' and q.Difficult='$diff';";
-$d = mysqli_fetch_row($mysql_qry);
+$result=$conn->query($mysql_qry);
+$d = mysqli_fetch_row($result);
 $rand = mt_rand(0,$d[0] - 1);
 
 $mysql_qry = "SELECT q.Difficult,q.Content as Question,a.Content as Answer,a.IsTrue FROM (question q inner join answears a on a.QuestionId=q.Id) INNER JOIN(  
