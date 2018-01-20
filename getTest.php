@@ -5,7 +5,7 @@ $diff = $_POST["diff"];
 
 
 $mysql_qry = "SELECT q.Difficult,q.Content as Question,a.Content as Answer,a.IsTrue FROM (question q inner join answears a on a.QuestionId=q.Id) INNER JOIN(  
-SELECT DISTINCT q.Id FROM question q where q.CategoryId='$id' and q.Difficult='$diff' order by rand() limit 10) as q2 ON q2.Id=q.Id;"; 
+SELECT DISTINCT q.Id FROM question q where q.CategoryId='$id' and q.Difficult='$diff' order by rand() limit 10) as q2 ON q2.Id=q.Id"; 
 $result=$conn->query($mysql_qry);
 
 if($result)
