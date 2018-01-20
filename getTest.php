@@ -2,29 +2,11 @@
 require "conn.php";
 $id = $_POST["id"];
 $diff = $_POST["diff"];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 $mysql_qry="SELECT count(*)  FROM question q where q.CategoryId='$id' and q.Difficult='$diff';";
-$result=$conn->query($mysql_qry);
-$d = mysqli_fetch_row($result);
-$rand = mt_rand(0,$d[0] - 1);
 
-$mysql_qry = "SELECT q.Difficult,q.Content as Question,a.Content as Answear,a.IsTrue FROM (question q inner join answears a on a.QuestionId=q.Id) INNER JOIN(  
-SELECT DISTINCT q.Id FROM question q where q.CategoryId='$id' and q.Difficult='$diff' limit $rand,10) as q2 ON q2.Id=q.Id;"; 
-=======
 $mysql_qry = "SELECT q.Difficult,q.Content as Question,a.Content as Answer,a.IsTrue FROM (question q inner join answears a on a.QuestionId=q.Id) INNER JOIN(  
 SELECT DISTINCT q.Id FROM question q where q.CategoryId='$id' and q.Difficult='$diff' order by rand() limit 10) as q2 ON q2.Id=q.Id;"; 
->>>>>>> parent of 89cb8dd... edit rand
-=======
-$mysql_qry = "SELECT q.Difficult,q.Content as Question,a.Content as Answer,a.IsTrue FROM (question q inner join answears a on a.QuestionId=q.Id) INNER JOIN(  
-SELECT DISTINCT q.Id FROM question q where q.CategoryId='$id' and q.Difficult='$diff' order by rand() limit 10) as q2 ON q2.Id=q.Id;"; 
->>>>>>> parent of 89cb8dd... edit rand
-=======
-$mysql_qry = "SELECT q.Difficult,q.Content as Question,a.Content as Answer,a.IsTrue FROM (question q inner join answears a on a.QuestionId=q.Id) INNER JOIN(  
-SELECT DISTINCT q.Id FROM question q where q.CategoryId='$id' and q.Difficult='$diff' order by rand() limit 10) as q2 ON q2.Id=q.Id;"; 
->>>>>>> parent of 89cb8dd... edit rand
 $result=$conn->query($mysql_qry);
 
 if($result)
@@ -38,17 +20,3 @@ if($result)
 	
 }
 $conn->close();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-?>
-
-=======
-?>
->>>>>>> parent of 89cb8dd... edit rand
-=======
-?>
->>>>>>> parent of 89cb8dd... edit rand
-=======
-?>
->>>>>>> parent of 89cb8dd... edit rand
