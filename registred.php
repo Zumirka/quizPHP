@@ -5,12 +5,12 @@ $user_pass = $_POST["password"];
 $mysql_qry = "insert into user (Name, Password) values ('$user_name','$user_pass')"; 
 if($conn->query($mysql_qry) === TRUE)
 {
-	echo  "Rejestracja pomyślna. Możesz sie zalogować " ;
+	echo  "1" ;
 	
 }
 else 
 {
-	echo  "Błąd. Wpisz inny login lub hasło."; 
+	echo  "0"; 
 }
 $conn->close();
 ?>
